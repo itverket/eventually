@@ -1,6 +1,6 @@
 variable "resource_group_name" {
   type = "string"
-  default = "itv-eventually"
+  default = "itv-eventually-dev"
 }
 
 variable "location" {
@@ -10,7 +10,7 @@ variable "location" {
 
 variable "app_service_name" {
   type = "string"
-  default = "eventuelly-web-app"
+  default = "eventuelly-web-app-dev"
 }
 
 variable "app_service_plan_sku_tier" {

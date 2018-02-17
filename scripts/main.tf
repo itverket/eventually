@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "default" {
 }
 
 resource "azurerm_app_service_plan" "default" {
-  name                = "${var.app_service_name}-plan"
+  name                = "${var.resource_group_name}-${var.app_service_name}-plan"
   location            = "${azurerm_resource_group.default.location}"
   resource_group_name = "${azurerm_resource_group.default.name}"
 
@@ -21,7 +21,7 @@ resource "azurerm_app_service_plan" "default" {
 }
 
 resource "azurerm_app_service" "default" {
-  name                = "${var.app_service_name}"
+  name                = "${var.resource_group_name}-${var.app_service_name}"
   location            = "${azurerm_resource_group.default.location}"
   resource_group_name = "${azurerm_resource_group.default.name}"
   app_service_plan_id = "${azurerm_app_service_plan.default.id}"
@@ -45,7 +45,7 @@ resource "azurerm_app_service" "default" {
 # Database 
 
 resource "azurerm_sql_database" "db" {
-  name                             = "${var.db_name}"
+  name                             = "${var.resource_group_name}-${var.db_name}"
   resource_group_name              = "${azurerm_resource_group.default.name}"
   location                         = "${var.location}"
   edition                          = "${var.db_edition}"
@@ -65,7 +65,7 @@ resource "azurerm_sql_server" "server" {
 }
 
 resource "azurerm_sql_firewall_rule" "fw" {
-  name                = "firewallrules"
+  name                = "${var.resource_group_name}-firewallrules"
   resource_group_name = "${azurerm_resource_group.default.name}"
   server_name         = "${azurerm_sql_server.server.name}"
   start_ip_address    = "${var.start_ip_address}"
