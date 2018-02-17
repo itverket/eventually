@@ -1,0 +1,13 @@
+source https://nuget.org/api/v2
+
+nuget DbUp
+nuget System.Data.SqlClient
+nuget Dapper
+nuget Dapper.SimpleCRUD
+
+nuget NUnit
+nuget NUnit3TestAdapter
+
+clitool Microsoft.NET.Test.Sdk
+
+clitool Microsoft.DotNet.Watcher.Tools
