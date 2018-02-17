@@ -1,5 +1,5 @@
 ﻿using System;
-using api.Controllers;
+using Api.Controllers;
 using NUnit.Framework;
 
 namespace Api.UnitTest

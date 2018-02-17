@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace api.Controllers
+namespace Api.Controllers
 {
     public static class ValuesRepo 
     {

@@ -11,8 +11,6 @@ NUGET
       System.Reflection.TypeExtensions (>= 4.4) - restriction: || (&& (< net451) (>= netstandard1.3) (< netstandard2.0)) (&& (< net451) (>= netstandard2.0))
       System.Runtime.InteropServices (>= 4.3) - restriction: && (< net451) (>= netstandard1.3) (< netstandard2.0)
       System.Xml.XmlDocument (>= 4.3) - restriction: && (< net451) (>= netstandard1.3) (< netstandard2.0)
-    Dapper.SimpleCRUD (1.13)
-      Dapper (>= 1.42 < 2.0)
     dbup (3.3.5)
     Microsoft.CodeCoverage (1.0.3)
     Microsoft.CSharp (4.4.1) - restriction: || (>= netcoreapp1.0) (>= uap10.0)
