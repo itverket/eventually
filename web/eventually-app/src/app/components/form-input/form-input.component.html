@@ -1,0 +1,7 @@
+<div style="margin: 0 auto">
+  <label for="input">{{label}}</label>
+  <input *ngIf="!isTextArea()" type="{{type}}" #input (blur)="onBlur(input.value)" >
+  <textarea *ngIf="isTextArea()" #input (blur)="onBlur(input.value)" ></textarea>
+</div>
+
+

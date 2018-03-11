@@ -1,0 +1,1 @@
+ALTER TABLE Event ADD Location varchar(100) NOT NULL default('unknown')

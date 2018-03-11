@@ -1,0 +1,26 @@
+$button-color: #19B1FF;
+
+button {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  color: #19B1FF;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  border: none;
+  transition: all .5s;
+  z-index: 1000;
+  background-image: url('../../../assets/plus.png');
+  background-repeat: no-repeat;
+    background-size: 70px;
+    outline:none;
+  
+  &:hover {
+    background-color: darken($color: $button-color, $amount: 20%);
+  }
+  
+  &.show{
+    background-image: url('../../../assets/ic-cancel-white.svg');
+  }
+}

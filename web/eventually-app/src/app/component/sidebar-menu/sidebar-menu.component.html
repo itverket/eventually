@@ -1,0 +1,11 @@
+<div *ngIf="show" class="overlay" (click)="$event.stopPropagation(); show = false">
+</div>
+
+
+<app-event-form [(showCondition)]="show"></app-event-form>
+
+
+<app-new-event-button [(showCondition)]="show">
+
+
+</app-new-event-button>

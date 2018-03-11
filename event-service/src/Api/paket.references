@@ -1,0 +1,4 @@
+Dapper
+System.Data.SqlClient
+Microsoft.DotNet.Watcher.Tools
+Swashbuckle.AspNetCore

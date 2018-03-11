@@ -1,0 +1,6 @@
+NUnit
+NUnit3TestAdapter
+Newtonsoft.Json
+Microsoft.NET.Test.Sdk
+Microsoft.AspNetCore.TestHost
+Respawn

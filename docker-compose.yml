@@ -1,0 +1,20 @@
+version: "3"
+services:
+    # event-service:
+    #     build: event-service
+    #     ports:
+    #         - "5000:5000"
+    #     depends_on:
+    #         - db
+    db:
+        image: "microsoft/mssql-server-linux"
+        volumes:
+            - mssqldata:/var/lib/mssql
+        ports:
+            - "1433:1433"
+        environment:
+            SA_PASSWORD: "Qwer1234*"
+            ACCEPT_EULA: "Y"
+
+volumes:
+    mssqldata:

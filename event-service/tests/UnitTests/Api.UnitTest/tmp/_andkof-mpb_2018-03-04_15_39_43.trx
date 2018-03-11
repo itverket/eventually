@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="614f16b4-435c-4275-ba4c-470a344fb921" name="@andkof-mpb 2018-03-04 15:39:43" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2018-03-04T15:39:43.5664920+01:00" queuing="2018-03-04T15:39:43.5665060+01:00" start="2018-03-04T15:39:42.4255020+01:00" finish="2018-03-04T15:39:43.5819410+01:00" />
+  <TestSettings name="default" id="762144db-674c-4656-84ad-de3656303e62">
+    <Deployment runDeploymentRoot="_andkof-mpb_2018-03-04_15_39_43" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="bbb83a19-1788-404a-9a5d-5042337fd1f5" testId="d2c15e3e-7534-4c52-a3c0-93a8f776766c" testName="ValuesRepo_Should_Return_Values" computerName="andkof-mpb" duration="00:00:00.0120000" startTime="2018-03-04T15:39:43.0000000+01:00" endTime="2018-03-04T15:39:43.0000000+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bbb83a19-1788-404a-9a5d-5042337fd1f5" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="ValuesRepo_Should_Return_Values" storage="/users/andkof/code/eventually/event-service/tests/unittests/api.unittest/bin/debug/netcoreapp2.0/api.unittest.dll" id="d2c15e3e-7534-4c52-a3c0-93a8f776766c">
+      <Execution id="bbb83a19-1788-404a-9a5d-5042337fd1f5" />
+      <TestMethod codeBase="/Users/andkof/Code/eventually/event-service/tests/UnitTests/Api.UnitTest/bin/Debug/netcoreapp2.0/Api.UnitTest.dll" executorUriOfAdapter="executor://nunit3testexecutor/" className="Api.UnitTest.FirstTests" name="ValuesRepo_Should_Return_Values" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d2c15e3e-7534-4c52-a3c0-93a8f776766c" executionId="bbb83a19-1788-404a-9a5d-5042337fd1f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 3.9.0.0: Test execution startedRunning all tests in /Users/andkof/Code/eventually/event-service/tests/UnitTests/Api.UnitTest/bin/Debug/netcoreapp2.0/Api.UnitTest.dllNUnit3TestExecutor converted 1 of 1 NUnit test casesNUnit Adapter 3.9.0.0: Test execution complete</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

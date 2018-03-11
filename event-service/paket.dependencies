@@ -1,0 +1,15 @@
+source https://nuget.org/api/v2
+
+nuget DbUp
+nuget Swashbuckle.AspNetCore
+nuget System.Data.SqlClient
+nuget Dapper
+nuget Newtonsoft.Json
+
+nuget NUnit
+nuget NUnit3TestAdapter
+nuget Microsoft.AspNetCore.TestHost 
+nuget Respawn
+
+clitool Microsoft.NET.Test.Sdk
+clitool Microsoft.DotNet.Watcher.Tools

@@ -1,0 +1,1 @@
+ALTER TABLE Event ADD Status tinyint NOT NULL default(3)
