@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Api;
 using DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NServiceBus;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace api
@@ -28,13 +30,16 @@ namespace api
         {
             services.AddMvc();
             services.AddSwaggerGen(c =>
-           {
+            {
                c.SwaggerDoc("v1", new Info { Title = "Eventually API", Version = "v1" });
                var basePath = AppContext.BaseDirectory;
                var xmlPath = Path.Combine(basePath, "Api.xml");
                c.IncludeXmlComments(xmlPath);
                c.DescribeAllEnumsAsStrings();
-           });
+            });
+
+            var endpoint = NServiceBusConfiguration.StartEndpoint(Configuration.GetConnectionString("eventually-sql"));
+            services.AddSingleton<IEndpointInstance>(endpoint);
 
             //Application services
             services.AddSingleton<IConnectionProvider>(_ => new ConnectionProvider(Configuration.GetConnectionString("eventually-sql")));

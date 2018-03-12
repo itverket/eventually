@@ -4,6 +4,7 @@ using System.Linq;
 using DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NServiceBus;
 
 namespace Api.Event
 {
@@ -12,12 +13,14 @@ namespace Api.Event
     {
         private readonly IWriteRepository _writeRepo;
         private IReadRepository _readRepo;
+        private readonly IEndpointInstance _endpoint;
         private readonly ILogger<EventController> _logger;
 
-        public EventController(IWriteRepository writeRepo, IReadRepository readRepo, ILoggerFactory logFactory)
+        public EventController(IWriteRepository writeRepo, IReadRepository readRepo, IEndpointInstance endpoint, ILoggerFactory logFactory)
         {
             _writeRepo = writeRepo;
             _readRepo = readRepo;
+            _endpoint = endpoint;
             _logger = logFactory.CreateLogger<EventController>();
         }
 
