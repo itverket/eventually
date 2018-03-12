@@ -1,11 +1,15 @@
 version: "3"
 services:
-    # event-service:
-    #     build: event-service
-    #     ports:
-    #         - "5000:5000"
-    #     depends_on:
-    #         - db
+    event-service-api:
+        build: event-service/src/Api
+        ports:
+            - "5000:80"
+        depends_on:
+            - db
+    event-service-migration:
+        build: "event-service/src/Database"
+        depends_on: 
+            - db
     db:
         image: "microsoft/mssql-server-linux"
         volumes:
