@@ -14,7 +14,7 @@ using Microsoft.Extensions.Options;
 using NServiceBus;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace api
+namespace Api.Infrastructure
 {
     public class Startup
     {
@@ -29,17 +29,8 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSwaggerGen(c =>
-            {
-               c.SwaggerDoc("v1", new Info { Title = "Eventually API", Version = "v1" });
-               var basePath = AppContext.BaseDirectory;
-               var xmlPath = Path.Combine(basePath, "Api.xml");
-               c.IncludeXmlComments(xmlPath);
-               c.DescribeAllEnumsAsStrings();
-            });
-
-            var endpoint = NServiceBusConfiguration.StartEndpoint(Configuration.GetConnectionString("eventually-sql"));
-            services.AddSingleton<IEndpointInstance>(endpoint);
+            services.ConfigureSwagger();
+            services.RegisterNserviceBusEndpoint(Configuration.GetConnectionString("eventually-sql"));
 
             //Application services
             services.AddSingleton<IConnectionProvider>(_ => new ConnectionProvider(Configuration.GetConnectionString("eventually-sql")));
@@ -62,7 +53,6 @@ namespace api
 
             //Web Api
             app.UseMvc();
-
             app.UseSwagger();
             app.UseSwaggerUI(c =>
            {

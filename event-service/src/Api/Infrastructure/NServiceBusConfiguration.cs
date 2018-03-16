@@ -1,10 +1,18 @@
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using NServiceBus;
 
-namespace Api
+namespace Api.Infrastructure
 {
     public static class NServiceBusConfiguration
     {
+        public static void RegisterNserviceBusEndpoint(this IServiceCollection services, string connectionString)
+        {
+            var endpoint = NServiceBusConfiguration.StartEndpoint(connectionString);
+            services.AddSingleton<IEndpointInstance>(endpoint);
+        }
+
         public static IEndpointInstance StartEndpoint(string connectionString)
         {
             var endpointConfiguration = new EndpointConfiguration("Samples.SqlServer.SimpleSender");
@@ -18,8 +26,6 @@ namespace Api
 
             var endpointInstance = Endpoint.Start(endpointConfiguration).ConfigureAwait(false).GetAwaiter().GetResult();
             return endpointInstance;
-            // await endpointInstance.Stop()
-            //     .ConfigureAwait(false);
         }
     }
 }

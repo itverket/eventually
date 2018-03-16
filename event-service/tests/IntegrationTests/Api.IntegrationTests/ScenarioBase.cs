@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Api.Event;
+using Api.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
@@ -40,7 +41,7 @@ namespace Api.IntegrationTests
 
             _server = new TestServer(new WebHostBuilder()
                     .UseConfiguration(config)
-                .UseStartup<api.Startup>());
+                .UseStartup<Startup>());
             Client = _server.CreateClient();
 
             var connectionString = config.GetConnectionString("eventually-sql");
