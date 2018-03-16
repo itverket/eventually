@@ -1,11 +1,25 @@
 import { Injectable } from '@angular/core';
 import { IEvent } from '../interfaces/IEvent';
+import { ApiClient } from '../service/api-client';
+import { Observable } from 'rxjs';
+
 
 @Injectable()
 export class EventService {
 
-  constructor() { }
+  private url = 'events';
 
+  constructor(private apiService: ApiClient<IEvent>) { }
+
+  getEvents(): IEvent[] {
+    return this.events;
+  }
+
+  saveEvent(event: IEvent) : Observable<IEvent>{
+    event.createdInThisSession = true;
+    this.events.unshift(event);
+    return this.apiService.get(this.url);
+  }
 
   private events: IEvent[] = [
     {
@@ -14,6 +28,7 @@ export class EventService {
       description: 'Kos og moro',
       endTime: new Date(),
       startTime: new Date(),
+      createdInThisSession: false
     },
     {
       title: 'Fagkveld',
@@ -21,6 +36,7 @@ export class EventService {
       description: 'Vi spiser pizza',
       endTime: new Date(),
       startTime: new Date(),
+      createdInThisSession: false
     },
     {
       title: 'Fagkveld',
@@ -28,6 +44,7 @@ export class EventService {
       description: 'koding',
       endTime: new Date(),
       startTime: new Date(),
+      createdInThisSession: false
     },
     {
       title: 'Juletrefest',
@@ -35,6 +52,7 @@ export class EventService {
       description: 'vi planlegger julen',
       endTime: new Date(),
       startTime: new Date(),
+      createdInThisSession: false
     },
     {
       title: 'Månelanding',
@@ -42,15 +60,7 @@ export class EventService {
       description: 'dette blir gøy',
       endTime: new Date(),
       startTime: new Date(),
+      createdInThisSession: false
     },
   ];
-
-  getEvents(): IEvent[] {
-    return this.events;
-  }
-
-  saveEvent(event: IEvent) {
-    this.events.push(event);
-  }
-
 }
