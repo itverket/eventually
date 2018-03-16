@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="{'pulse':event.createdInThisSession}">
 
   <h2 class="header">
     {{event.title}}

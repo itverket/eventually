@@ -4,4 +4,5 @@ export interface IEvent {
     description: string;
     startTime: Date;
     endTime: Date;
+    createdInThisSession: boolean;
 }

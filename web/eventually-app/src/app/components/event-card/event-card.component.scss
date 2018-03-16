@@ -5,6 +5,7 @@
     background: white;
     padding: 10px;
     border-radius: 15px;
+    box-shadow: 0 0 20px 3px #888888;
 }
 
 .header{
@@ -19,4 +20,25 @@ hr{
     margin: 5px 15% 20px 15%;
     /* height: 1px; */
     border: 1px solid #ccc
+}
+
+
+.pulse {
+    animation: pulsate 2s ease-out;
+    animation-iteration-count: 3;   
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: 3; 
+    
+}
+
+@keyframes pulsate {
+    0% { box-shadow: 0 0 20px 3px #888888;}
+    50% { box-shadow: 0 0 20px 10px #888888;}
+    100% { box-shadow: 0 0 20px 3px #888888;}
+}
+
+@-webkit-keyframes pulsate {
+    0% { box-shadow: 0 0 20px 0px #888888;}
+    50% { box-shadow: 0 0 20px 10px #888888;}
+    100% { box-shadow: 0 0 20px 0px #888888;}
 }
