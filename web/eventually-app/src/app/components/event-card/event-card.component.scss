@@ -1,41 +1,37 @@
 .card{
     width: 400px;
     height: 250px;
-    margin: 50px;
+    margin: 25px;
     background: white;
-    padding: 10px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 20px 3px #888888;
 }
 
 .header{
     text-align: center;
-    /* margin-top: 14px; */
     display: inline-block;
     margin: 4px auto;
     width: 100%;
 }
 
 hr{
-    margin: 5px 15% 20px 15%;
-    /* height: 1px; */
     border: 1px solid #ccc
 }
 
-
-.pulse {
+    .pulse {
     animation: pulsate 2s ease-out;
     animation-iteration-count: 3;   
     -webkit-animation: pulsate 2s ease-out;
     -webkit-animation-iteration-count: 3; 
-    
-}
 
-@keyframes pulsate {
+    }
+
+    @keyframes pulsate {
     0% { box-shadow: 0 0 20px 3px #888888;}
     50% { box-shadow: 0 0 20px 10px #888888;}
     100% { box-shadow: 0 0 20px 3px #888888;}
-}
+    }
 
 @-webkit-keyframes pulsate {
     0% { box-shadow: 0 0 20px 0px #888888;}

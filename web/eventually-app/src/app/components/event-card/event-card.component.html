@@ -1,18 +1,7 @@
 <div class="card" [ngClass]="{'pulse':event.createdInThisSession}">
-
-  <h2 class="header">
-    {{event.title}}
-  </h2>
-
+  <h2 class="header">{{event.title}}</h2>
   <hr>
-
-  <span>
-    {{event.description}}
-  </span>
-
-  <span>
-    {{event.location}}
-  </span>
-
-
+  <div>{{event.description}}</div>
+  <div>Lokasjon: {{event.location}}</div>
+  <div>{{event.startTime | date:'d.MM.y, HH:mm'}} - {{event.startTime | date:'d.MM.y, HH:mm'}}</div>
 </div>

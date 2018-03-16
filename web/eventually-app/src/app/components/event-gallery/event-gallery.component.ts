@@ -15,7 +15,6 @@ export class EventGalleryComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.eventService.getEvents();
-
   }
 
 }

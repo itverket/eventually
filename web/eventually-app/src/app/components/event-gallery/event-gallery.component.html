@@ -1,6 +1,12 @@
 
-<div class="container">
-  <app-event-card *ngFor="let event of data" [event]="event" ></app-event-card>
-</div>
+<div style="padding: 0 50px;">
 
+<input class="filter"  type="text" [(ngModel)]="filterBy" placeholder="filtrer">
+
+<div class="filter-line"></div>
+
+<div class="container">
+  <app-event-card *ngFor="let event of data | filter:filterBy" [event]="event" ></app-event-card>
+</div>
  <app-sidebar-menu></app-sidebar-menu>
+</div>
