@@ -14,7 +14,9 @@ export class EventGalleryComponent implements OnInit {
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
-    this.data = this.eventService.getEvents();
+    this.eventService.getEvents().subscribe((events) =>{
+this.data = events;
+    });
   }
 
 }
