@@ -1,16 +1,11 @@
-<div class="form"  [ngClass]="{'show': showCondition}">
-
- <h2> Nytt event </h2>
-
+<div class="form" [ngClass]="{'show': showCondition}">
+  <h2> Nytt event </h2>
   <app-form-input [label]="'Tittel'" [(value)]="data.title"> </app-form-input>
   <app-form-input [label]="'Lokasjon'" [(value)]="data.location"> </app-form-input>
   <app-form-input [label]="'Fra'" [(value)]="data.startTime" [type]="'date'"> </app-form-input>
   <app-form-input [label]="'Til'" [(value)]="data.endTime" [type]="'date'"> </app-form-input>
   <app-form-input [label]="'Beskrivelse'" [(value)]="data.description" [type]="'textarea'"> </app-form-input>
-
-
-<div class="button-container">
-  <app-save-button (click)="saveEvent()"> Opprett event </app-save-button>
-</div>
-
+  <div class="button-container">
+    <app-save-button (click)="saveEvent()"> Opprett event </app-save-button>
+  </div>
 </div>

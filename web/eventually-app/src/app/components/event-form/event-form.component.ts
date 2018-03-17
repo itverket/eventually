@@ -2,7 +2,6 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { IEvent } from '../../interfaces/IEvent';
 import { EventService } from '../../service/event.service';
 
-
 @Component({
   selector: 'app-event-form',
   templateUrl: './event-form.component.html',
