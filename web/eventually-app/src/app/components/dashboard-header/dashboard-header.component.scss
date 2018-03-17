@@ -7,10 +7,13 @@
 text {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  -webkit-animation: draw 12s forwards;
+  stroke: transparent;
+  -webkit-animation: draw 8s forwards;
 }
+
 @-webkit-keyframes draw {
   100% {
     stroke-dashoffset: 0;
+    stroke: #999;
   }
 }
