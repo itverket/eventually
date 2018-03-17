@@ -1,6 +1,10 @@
 source https://nuget.org/api/v2
 
 nuget DbUp
+nuget NServiceBus 7.0.0-rc0001 rc
+nuget NServiceBus.SqlServer 4.0.0-rc0003 rc
+nuget NServiceBus.Persistence.Sql 4.0.0-rc0003 rc
+
 nuget Swashbuckle.AspNetCore
 nuget System.Data.SqlClient
 nuget Dapper
