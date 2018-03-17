@@ -7,9 +7,17 @@ namespace Api
 {
     public class NewEventCreatedEventHandler : IHandleMessages<INewEventCreated>
     {
+        private readonly ILogger<NewEventCreatedEventHandler> _logger;
+        
+        public NewEventCreatedEventHandler(ILoggerFactory loggerFactory)
+        {
+            _logger = loggerFactory.CreateLogger<NewEventCreatedEventHandler>();
+        }
+
         public Task Handle(INewEventCreated message, IMessageHandlerContext context)
         {
-            return Task.FromResult(1);
+            _logger.LogInformation("Handling event created event");
+            return Task.CompletedTask;
         }
     }
 }

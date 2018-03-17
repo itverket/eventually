@@ -4,6 +4,10 @@ nuget DbUp
 nuget NServiceBus 7.0.0-rc0001 rc
 nuget NServiceBus.SqlServer 4.0.0-rc0003 rc
 nuget NServiceBus.Persistence.Sql 4.0.0-rc0003 rc
+nuget NServiceBus.Autofac 7.0.0-rc0001 rc
+
+nuget Autofac
+nuget Autofac.Extensions.DependencyInjection
 
 nuget Swashbuckle.AspNetCore
 nuget System.Data.SqlClient
