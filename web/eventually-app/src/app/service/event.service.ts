@@ -7,18 +7,19 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class EventService {
 
-  private url = 'events';
+  private url = 'event';
 
   constructor(private apiService: ApiClient<IEvent>) { }
 
-  getEvents(): IEvent[] {
-    return this.events;
+  getEvents(): Observable<IEvent[]> {
+    return this.apiService.getList(this.url);
+    // return this.events;
   }
 
   saveEvent(event: IEvent): Observable<IEvent> {
     event.createdInThisSession = true;
     this.events.unshift(event);
-    return this.apiService.get(this.url);
+    return this.apiService.post(this.url, event);
   }
 
   private events: IEvent[] = [

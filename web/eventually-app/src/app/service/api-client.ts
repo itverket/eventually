@@ -13,7 +13,11 @@ private baseUrl = environment.baseUrl;
 
 constructor(private httpClient: HttpClient){}
 
-public get(url:string, id: string = null) : Observable<T>{
+public getList(url:string) : Observable<T[]>{
+    return this.httpClient.get<T[]>(this.appendUrlWithBase(url));
+}
+
+public get(url:string, id: string) : Observable<T>{
     return this.httpClient.get<T>('https://reqres.in/api/users/');
     // return this.httpClient.get<T>(this.appendUrlWithBase(url,id);
 }
@@ -31,7 +35,8 @@ public delete(url: string, id: string){
 }
 
 private appendUrlWithBase(url: string, id = ''): string{
-    return `${this.baseUrl}/${url}/${id}`;
+    
+    return `${this.baseUrl}/${url}${id? '/'+id : ''}`;
 }
 
 }
