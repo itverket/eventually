@@ -1,23 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Contracts;
 using DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NServiceBus;
 
 namespace Api.Event
 {
     [Route("api/event")]
     public class EventController : Controller
     {
-        private readonly IWriteRepository _writeRepo;
         private IReadRepository _readRepo;
+        private readonly IWriteRepository _writeRepo;
+        private readonly IEndpointInstance _endpoint;
         private readonly ILogger<EventController> _logger;
 
-        public EventController(IWriteRepository writeRepo, IReadRepository readRepo, ILoggerFactory logFactory)
+        public EventController(
+            IReadRepository readRepo,
+            IWriteRepository writeRepo,
+            IEndpointInstance endpoint,
+            ILoggerFactory logFactory)
         {
             _writeRepo = writeRepo;
             _readRepo = readRepo;
+            _endpoint = endpoint;
             _logger = logFactory.CreateLogger<EventController>();
         }
 
@@ -54,6 +62,10 @@ namespace Api.Event
             var orEvent = requestedEvent.MapToEntity();
             orEvent.Id = Guid.NewGuid();
             _writeRepo.StoreEvent(orEvent);
+            _endpoint.Publish<INewEventCreated>(e =>
+            {
+                e.EventId = orEvent.Id;
+            });
             return orEvent.Id;
         }
 

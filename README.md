@@ -3,7 +3,7 @@ Event service is responsible for the back-end for the event management system. C
 
 ## Run using docker-compose
 - Run `dotnet publish` from event-service directory
-- Run `docker-compose -d --build` to start the devlopment environment. This will start a sql database, run migrations and start the API in docker, on the following exported ports:
+- Run `docker-compose up -d --build` to start the devlopment environment. This will start a sql database, run migrations and start the API in docker, on the following exported ports:
     - event-service (port 5000): Swagger documentation can be used for testing and when developing the fron-end, after starting the development server goto http://localhost:5000/swagger/ 
     - sql database: localhost:1433
 
