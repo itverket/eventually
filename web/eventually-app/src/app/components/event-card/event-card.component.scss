@@ -1,10 +1,15 @@
+.description{
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .card{
     width: 200px;
-    height: 250px;
+    min-height: 250px;
     margin: 25px;
     background: white;
     padding: 20px;
-    border-radius: 15px;
     box-shadow: 0 0 20px 3px #888888;
 }
 

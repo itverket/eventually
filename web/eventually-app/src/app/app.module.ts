@@ -20,6 +20,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardHeaderComponent } from './components/dashboard-header/dashboard-header.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { LoadingIndicatorComponent } from './layout/loading-indicator/loading-indicator.component';
+import { TimeLabelComponent } from './components/time-label/time-label.component';
+import { CardLabelComponent } from './components/card-label/card-label.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     DashboardHeaderComponent,
     FilterPipe,
+    LoadingIndicatorComponent,
+    TimeLabelComponent,
+    CardLabelComponent,
   ],
   imports: [
     RouterModule.forRoot(
