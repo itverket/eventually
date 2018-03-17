@@ -3,3 +3,14 @@
     padding: 10px 20px 0 20px;
     display: inline-block;
 }
+
+text {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: draw 12s forwards;
+}
+@-webkit-keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
