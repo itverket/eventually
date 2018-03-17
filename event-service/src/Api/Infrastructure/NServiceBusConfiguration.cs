@@ -10,12 +10,6 @@ namespace Api.Infrastructure
 {
     public static class NServiceBusConfiguration
     {
-        public static void RegisterNserviceBusEndpoint(this IServiceCollection services, string connectionString)
-        {
-            var endpoint = NServiceBusConfiguration.StartEndpoint(connectionString);
-            services.AddSingleton<IEndpointInstance>(endpoint);
-        }
-
         public static IEndpointInstance StartEndpoint(string connectionString)
         {
             var endpointName = "event-service";
