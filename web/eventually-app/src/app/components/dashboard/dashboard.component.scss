@@ -7,6 +7,7 @@
     animation: fadein 4s forwards;
     z-index: 100000000000;
     position: fixed;
+    overflow-y: auto;
 }
 
 @-webkit-keyframes fadein {

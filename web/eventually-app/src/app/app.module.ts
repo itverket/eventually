@@ -14,7 +14,7 @@ import { NewEventButtonComponent } from './layout/buttons/new-event-button/new-e
 import { SidebarMenuComponent } from './layout/sidebar-menu/sidebar-menu.component';
 import { FormInputComponent } from './components/form-input/form-input.component';
 import { EventFormComponent } from './components/event-form/event-form.component';
-import { SaveButtonComponent } from './components/save-button/save-button.component';
+import { SaveButtonComponent } from './layout/buttons/save-button/save-button.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardHeaderComponent } from './components/dashboard-header/dashboard-header.component';
