@@ -12,7 +12,6 @@ export class EventService {
 
   getEvents(): Observable<IEvent[]> {
     return this.apiService.getList(this.url);
-    // return this.events;
   }
 
   saveEvent(event: IEvent): Observable<string> {
