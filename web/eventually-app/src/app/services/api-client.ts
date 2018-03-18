@@ -24,8 +24,8 @@ public put(url: string, id: string, data : T){
    return this.httpClient.put<T>(this.appendUrlWithBase(url, id), data);
 }
 
-public post(url: string, data : T){
-    return this.httpClient.post(this.appendUrlWithBase(url),data);
+public post(url: string, data : T) : Observable<string>{
+    return this.httpClient.post<string>(this.appendUrlWithBase(url),data);
 }
 
 public delete(url: string, id: string){
