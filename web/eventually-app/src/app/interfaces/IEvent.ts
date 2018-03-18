@@ -1,8 +1,9 @@
 export interface IEvent {
-    title: string;
+    id?: string;
+    name: string;
     location: string;
     description: string;
-    startTime: Date;
-    endTime: Date;
+    starts: Date;
+    ends: Date;
     createdInThisSession: boolean;
 }

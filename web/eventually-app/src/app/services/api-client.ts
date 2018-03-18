@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Response } from '@angular/http';
-import 'rxjs/add/operator/map'
 
 @Injectable()
 export class ApiClient<T> {
@@ -18,8 +17,7 @@ public getList(url:string) : Observable<T[]>{
 }
 
 public get(url:string, id: string) : Observable<T>{
-    return this.httpClient.get<T>('https://reqres.in/api/users/');
-    // return this.httpClient.get<T>(this.appendUrlWithBase(url,id);
+     return this.httpClient.get<T>(this.appendUrlWithBase(url,id));
 }
 
 public put(url: string, id: string, data : T){
@@ -35,7 +33,6 @@ public delete(url: string, id: string){
 }
 
 private appendUrlWithBase(url: string, id = ''): string{
-    
     return `${this.baseUrl}/${url}${id? '/'+id : ''}`;
 }
 

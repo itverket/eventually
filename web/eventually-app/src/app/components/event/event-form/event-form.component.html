@@ -1,0 +1,44 @@
+<form class="form" #eventform="ngForm" (ngSubmit)="saveEvent()">
+  <h2> Nytt event </h2>
+
+  <legend>
+    <label for="name"> tittel </label>
+    <input type="text" id="name" required [(ngModel)]="data.name" name="name" #name="ngModel">
+    <div class="error-message" [hidden]="name.valid || name.pristine">
+      tittel er påkrevd
+    </div>
+  </legend>
+
+  <legend>
+    <label for="location"> sted </label>
+    <input type="text" id="location" required [(ngModel)]="data.location" name="location" #location="ngModel">
+    <div class="error-message" [hidden]="location.valid || location.pristine">
+      sted er påkrevd
+    </div>
+  </legend>
+
+  <legend>
+    <label for="starts"> fra </label>
+    <input type="date" id="starts" required [(ngModel)]="data.starts" name="starts" #starts="ngModel">
+    <div class="error-message" [hidden]="starts.valid || starts.pristine">
+      fra er påkrevd
+    </div>
+  </legend>
+
+  <legend>
+    <label for="ends"> til </label>
+    <input type="date" id="ends" required [(ngModel)]="data.ends" name="ends" #ends="ngModel">
+    <div class="error-message" [hidden]="ends.valid || ends.pristine">
+      til er påkrevd
+    </div>
+  </legend>
+
+  <legend>
+    <label for="description" style="vertical-align: top"> beskrivelse </label>
+    <textarea [id]="description" #description="ngModel" [name]="description" [(ngModel)]="data.description" #description="ngModel"></textarea>
+  </legend>
+
+  <div class="button-container">
+    <button type="submit" [disabled]="!eventform.form.valid">opprett event</button>
+  </div>
+</form>

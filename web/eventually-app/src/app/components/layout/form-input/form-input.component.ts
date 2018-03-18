@@ -6,10 +6,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./form-input.component.scss']
 })
 export class FormInputComponent implements OnInit {
-
   @Input() type = 'text';
   @Input() value;
+  @Input() identifier;
   @Input() label = '';
+  @Input() required = false;
+  
 
   @Output() valueChange = new EventEmitter<Object>();
 

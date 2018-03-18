@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IEvent } from '../../interfaces/IEvent';
+import { IEvent } from '../../../interfaces/IEvent';
 
 @Component({
-  selector: 'app-event-card',
-  templateUrl: './event-card.component.html',
-  styleUrls: ['./event-card.component.scss']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss']
 })
-export class EventCardComponent implements OnInit {
+export class CardComponent implements OnInit {
 
   @Input() event: IEvent;
 
@@ -17,7 +17,7 @@ export class EventCardComponent implements OnInit {
   }
 
   getDateFormat() {
-    return this.sameDay(this.event.startTime, this.event.endTime) ? 'HH:mm' : 'HH:mm, d.MM.y';
+    return this.sameDay(this.event.starts, this.event.ends) ? 'HH:mm' : 'HH:mm, d.MM.y';
   }
 
   private sameDay(d1: Date, d2: Date): boolean {

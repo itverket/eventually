@@ -16,9 +16,9 @@ export class FilterPipe implements PipeTransform {
     var filters = filterWithRemovedWhitespaces.split(" ").filter(x => x.length > 2);
 
     return events.filter(x =>
-    filters.some(filter => x.title.toLowerCase().indexOf(filter) != -1) ||
-    filters.some(filter => x.location.toLowerCase().indexOf(filter) != -1) ||
-    filters.some(filter => x.description.toLowerCase().indexOf(filter) != -1)
+    filters.some(filter => x.name && x.name.toLowerCase().indexOf(filter) != -1) ||
+    filters.some(filter => x.location && x.location.toLowerCase().indexOf(filter) != -1) ||
+    filters.some(filter => x.description && x.description.toLowerCase().indexOf(filter) != -1)
     )
   }
 }

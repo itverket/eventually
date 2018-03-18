@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-menu.component.scss']
 })
 export class SidebarMenuComponent implements OnInit {
-
-
-  private show = false;
+  @Input() show = false;
 
   constructor() { }
 
