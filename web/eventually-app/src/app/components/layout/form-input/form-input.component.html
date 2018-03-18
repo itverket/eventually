@@ -1,0 +1,7 @@
+<div style="margin: 0 auto">
+  <label [ngClass]="{'vertical-align': isTextArea()}">{{label}}</label>
+  <input *ngIf="!isTextArea()" type="{{type}}" #input (blur)="onBlur(input.value)" >
+  <textarea *ngIf="isTextArea()" #input (blur)="onBlur(input.value)" ></textarea>
+</div>
+
+

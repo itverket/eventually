@@ -1,0 +1,47 @@
+.description{
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card{
+    width: 200px;
+    min-height: 250px;
+    margin: 25px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 20px 3px #888888;
+}
+
+.header{
+    text-align: center;
+    display: inline-block;
+    margin: 4px auto;
+    width: 100%;
+}
+
+hr{
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+    .pulse {
+    animation: pulsate 2s ease-out;
+    animation-iteration-count: 3;   
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: 3; 
+
+    }
+
+    @keyframes pulsate {
+    0% { box-shadow: 0 0 20px 3px #888888;}
+    50% { box-shadow: 0 0 20px 10px #888888;}
+    100% { box-shadow: 0 0 20px 3px #888888;}
+    }
+
+@-webkit-keyframes pulsate {
+    0% { box-shadow: 0 0 20px 0px #888888;}
+    50% { box-shadow: 0 0 20px 10px #888888;}
+    100% { box-shadow: 0 0 20px 0px #888888;}
+}

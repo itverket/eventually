@@ -1,0 +1,8 @@
+<div *ngIf="show" class="overlay" (click)="$event.stopPropagation(); show = false">
+</div>
+
+<div class="content" [ngClass]="{'show': show}">
+    <ng-content></ng-content>
+</div>
+
+<app-new-event-button [(showCondition)]="show"></app-new-event-button>

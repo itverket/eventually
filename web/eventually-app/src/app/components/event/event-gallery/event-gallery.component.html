@@ -1,0 +1,15 @@
+
+<div style="padding: 0 130px;">
+
+<input class="filter"  type="text" [(ngModel)]="filterBy" placeholder="søk" autofocus>
+
+<div class="filter-line"></div>
+
+<div class="container">
+  <app-card *ngFor="let event of data | filter:filterBy" [event]="event" ></app-card>
+</div>
+
+ <app-sidebar-menu #sidebarmenu>
+  <app-event-form (newEventSaved)="newEventSaved($event)"></app-event-form>
+ </app-sidebar-menu>
+</div>

@@ -1,0 +1,7 @@
+<div class="card" [ngClass]="{'pulse':event.createdInThisSession}">
+  <h2 class="header">{{event.name}}</h2>
+  <hr>
+  <app-time-label [startTime]="event.starts" [endTime]="event.ends"> </app-time-label>
+  <app-card-label [label]="'Sted'" [value]="event.location"> </app-card-label>
+  <div class="description">{{event.description}}</div>
+</div>

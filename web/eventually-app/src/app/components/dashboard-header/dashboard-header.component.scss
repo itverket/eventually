@@ -1,0 +1,19 @@
+.title{
+           font-size: 25px;
+    padding: 10px 20px 0 20px;
+    display: inline-block;
+}
+
+text {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke: transparent;
+  -webkit-animation: draw 8s forwards;
+}
+
+@-webkit-keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #999;
+  }
+}

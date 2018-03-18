@@ -19,7 +19,7 @@ using Swashbuckle.AspNetCore.Swagger;
 
 namespace Api.Infrastructure
 {
-    public class Startup
+    public class    Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -30,7 +30,22 @@ namespace Api.Infrastructure
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                     corsBuilder => corsBuilder.WithOrigins("http://localhost:4200")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
             services.AddMvc();
+      
+            services.Configure<Microsoft.AspNetCore.Mvc.MvcOptions>(options =>
+            {
+                options.Filters.Add(new Microsoft.AspNetCore.Mvc.Cors.Internal.CorsAuthorizationFilterFactory("AllowSpecificOrigin"));
+            });
+
             services.ConfigureSwagger();
 
             var sqlConnectionString = Configuration.GetConnectionString("eventually-sql");
@@ -93,6 +108,9 @@ namespace Api.Infrastructure
            {
                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Eventually Api");
            });
+
+            app.UseCors("AllowSpecificOrigin");
+
         }
     }
 }

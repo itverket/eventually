@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+.filter-line{
+    height: 2px;
+    margin: 20px 0;
+    background: linear-gradient(to right, rgba(128,128,128,0), rgba(128,128,128,0.5));
+    animation: linefadein 2s ;
+    -webkit-animation: linefadein 2s ;
+    width: 100%;
+    clear:both;
+}
+
+@keyframes linefadein {
+    0% {width:0%;}
+    100% {width: 100%;}
+}
+
+.filter{
+     font-weight: 100;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    line-height: 30px;
+    font-size: 20px;
+    padding: 10px 20px;
+    float: right;
+    text-align: right;
+    display: inline-block;
+    width: 50%;
+}

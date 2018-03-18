@@ -1,0 +1,18 @@
+.fadeinoverlay{
+    top: 0;
+    left:0;
+    right: 0;
+    bottom:0;
+    background-color: rgba(255,255,255,1);
+    animation: fadein 4s forwards;
+    z-index: 100000000000;
+    position: fixed;
+    overflow-y: auto;
+}
+
+@-webkit-keyframes fadein {
+  100% {
+      background-color: rgba(255,255,255,0);
+  }
+}
+

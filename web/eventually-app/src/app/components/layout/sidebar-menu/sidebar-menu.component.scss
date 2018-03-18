@@ -1,0 +1,26 @@
+.overlay {
+  position: fixed;
+  background: rgba($color: grey, $alpha: .6);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.content{
+  width: 0;
+    position: fixed;
+    float: right;
+    z-index: 100;
+    background-color: whitesmoke;
+ 
+    height: 100%;
+    top: 0;
+    right: 0;
+     -webkit-transition: width .5s;
+    transition: width .5s;
+
+  &.show{
+    width:50%;
+  }
+}
