@@ -8,6 +8,13 @@ nuget NServiceBus.Autofac 7.0.0-rc0001 rc
 nuget Autofac
 nuget Autofac.Extensions.DependencyInjection
 
+nuget Microsoft.Extensions.Configuration
+nuget Microsoft.Extensions.Configuration.Json
+nuget Microsoft.Extensions.Logging
+nuget Microsoft.Extensions.Logging.AzureAppServices
+nuget Microsoft.Extensions.Logging.Debug
+nuget Microsoft.Extensions.Logging.Console
+
 nuget Swashbuckle.AspNetCore
 nuget System.Data.SqlClient
 nuget Newtonsoft.Json

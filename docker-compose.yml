@@ -1,5 +1,10 @@
 version: "3"
 services:
+    feedback-service-message-endpoint:
+        build: feedback-service/src/MessageEndpoint
+        depends_on:
+            - db
+            - event-service-api
     feedback-service-api:
         build: feedback-service/src/Api
         ports:

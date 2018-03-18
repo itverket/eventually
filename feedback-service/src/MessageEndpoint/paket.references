@@ -1,0 +1,12 @@
+Microsoft.DotNet.Watcher.Tools
+NServiceBus
+NServiceBus.SqlServer
+NServiceBus.Autofac
+Autofac
+Autofac.Extensions.DependencyInjection
+Microsoft.Extensions.Configuration
+Microsoft.Extensions.Configuration.Json
+Microsoft.Extensions.Logging 
+Microsoft.Extensions.Logging.AzureAppServices
+Microsoft.Extensions.Logging.Debug
+Microsoft.Extensions.Logging.Console
