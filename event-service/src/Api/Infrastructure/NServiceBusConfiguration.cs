@@ -5,12 +5,13 @@ using NServiceBus;
 using System.Data.SqlClient;
 using System;
 using Contracts;
+using Autofac;
 
 namespace Api.Infrastructure
 {
     public static class NServiceBusConfiguration
     {
-        public static IEndpointInstance StartEndpoint(string connectionString)
+        public static void ConfigureEndpoint(IEndpointInstance endpoint, IContainer container, string sqlConnectionString)
         {
             var endpointName = "event-service";
             var endpointConfiguration = new EndpointConfiguration(endpointName);
@@ -18,16 +19,20 @@ namespace Api.Infrastructure
             endpointConfiguration.AuditProcessedMessagesTo($"{endpointName}.audit");
             endpointConfiguration.UsePersistence<InMemoryPersistence>();
             endpointConfiguration.EnableInstallers();
+            endpointConfiguration.UseContainer<AutofacBuilder>(
+                customizations: customizations =>
+                {
+                    customizations.ExistingLifetimeScope(container);
+                });
 
             var transport = endpointConfiguration.UseTransport<SqlServerTransport>();
-            transport.ConnectionString(connectionString);
+            transport.ConnectionString(sqlConnectionString);
             transport.Transactions(TransportTransactionMode.SendsAtomicWithReceive);
 
             var routing = transport.Routing();
             routing.RegisterPublisher(typeof(INewEventCreated).Assembly, endpointName);
 
-            var endpointInstance = Endpoint.Start(endpointConfiguration).ConfigureAwait(false).GetAwaiter().GetResult();
-            return endpointInstance;
+            endpoint = Endpoint.Start(endpointConfiguration).ConfigureAwait(false).GetAwaiter().GetResult();
         }
     }
 }
