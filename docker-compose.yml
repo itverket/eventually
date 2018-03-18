@@ -1,5 +1,12 @@
 version: "3"
 services:
+    feedback-service-api:
+        build: feedback-service/src/Api
+        ports:
+            - "5001:80"
+        depends_on:
+            - db
+            - event-service-api
     event-service-api:
         build: event-service/src/Api
         ports:

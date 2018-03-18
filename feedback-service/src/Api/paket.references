@@ -1,0 +1,8 @@
+System.Data.SqlClient
+Microsoft.DotNet.Watcher.Tools
+Swashbuckle.AspNetCore
+NServiceBus
+NServiceBus.SqlServer
+NServiceBus.Autofac
+Autofac
+Autofac.Extensions.DependencyInjection
