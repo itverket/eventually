@@ -17,3 +17,12 @@ text {
     stroke: #999;
   }
 }
+
+svg text {
+  fill: none;
+  stroke: #999;
+  stroke-width: 0.3;
+  tspan {
+    stroke-width: 0.5;
+  }
+}
